@@ -1,7 +1,9 @@
 import { theme } from './theme';
 
+
 export default function GlobalStyle() {
     return (
+
         <style global jsx>{`
         * {
           box-sizing: border-box;

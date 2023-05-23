@@ -96,6 +96,7 @@ export const theme = {
           "700": "#421987",
           "800": "#34126F",
           "900": "#240754",
+          "A10": "#200b63"
       },
       neutral: {
           "000": "#FFFFFF",
@@ -113,7 +114,7 @@ export const theme = {
       }
   },
   typography: {
-      fontFamily: 'Open Sans',
+      fontFamily: 'Poppins',
       variants: {
           display1: {
               fontSize: {
@@ -125,6 +126,9 @@ export const theme = {
               },
               fontWeight: {
                   xs: '900',
+              },
+              borderRadius: {
+                xs: "50%"
               }
           },
           heading1: {

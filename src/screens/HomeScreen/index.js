@@ -1,9 +1,11 @@
+import Head from 'next/head'
 import Footer from '../../components/patterns/Footer'
+import Navbar from '../../components/patterns/Navbar'
 import Link from '../../components/Link'
 import { theme } from '../../theme/theme';
 import { Image, Box, Text, Icon, Input, Button } from '../../theme/components';
 
-const LOGO_ALURA_URL = 'https://fakeimg.pl/94x44';
+const AVATAR_URL = 'images/avatar.jpg';
 const SIDE_IMAGE_URL = 'https://fakeimg.pl/2878x1640'
 
 function SideImage() {
@@ -96,15 +98,66 @@ function SideImage() {
 export default function HomeScreen() {
   return (
     <Box>
+      <Head>
+        <title>
+          Home Page
+        </title>
+      </Head>
       <Box
         as="main"
         styleSheet={{
           flex: 1,
-          backgroundColor: theme.colors.neutral["050"],
         }}
       >
         <Box
           styleSheet={{
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: theme.colors.primary["900"],
+          }}>
+          <Box
+            className="avatar"
+            styleSheet={{
+              display: "flex",
+              justifyContent: "flex-start",
+            }}
+            >
+            <Image
+            styleSheet={{
+              width: "auto",
+              height: theme.space.x20,
+              borderRadius: theme.typography.variants.display1.borderRadius.xs,
+            }}
+            src={AVATAR_URL}
+            alt="Avatar url"
+              />
+          </Box>
+          <Box
+            className="navbar"
+            styleSheet={{
+              color: theme.colors.neutral["000"],
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+              marginTop: theme.space['x5'],
+              width: "50%",
+              margin: "0 auto"
+          }}>
+            <Navbar
+              styleSheet={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                textDecoration: "none",
+              }}
+            />
+          </Box>
+        </Box>
+
+        <Box
+          styleSheet={{
+            backgroundColor: theme.colors.neutral["300"],
+
             overflow: 'hidden',
             position: {
               lg: 'relative',
@@ -143,16 +196,6 @@ export default function HomeScreen() {
             }}
           >
             <Box>
-              <Box>
-                <Image
-                  styleSheet={{
-                    width: "auto",
-                    height: theme.space.x11,
-                  }}
-                  src={LOGO_ALURA_URL}
-                  alt="Logo Alura"
-                />
-              </Box>
               <Box
                 styleSheet={{
                   marginTop: {
@@ -222,13 +265,36 @@ export default function HomeScreen() {
                   }}
                 >
                   <Text
-                    as="h1"
+                    as="h2"
                     styleSheet={{
+                      textVariant: theme.typography.variants.heading2,
+                      color: theme.colors.neutral["600"],
+                    }}
+                  >
+                    Hello,
+                  </Text>
+                  <Text
+                  as="h1"
+                  styleSheet={{
                       textVariant: theme.typography.variants.heading1,
-                      color: theme.colors.neutral["900"],
+                      color: theme.colors.neutral["500"],
+                    }}> My name is Thayana.</Text>
+                        <Text
+                  as="h4"
+                  styleSheet={{
+                      textVariant: theme.typography.variants.heading4,
+                      color: theme.colors.neutral["200"],
+                      paddingLeft: theme.space['x1.5']
+                    }}> Front-end Developer</Text>
+                  <Text
+                    as="p"
+                    styleSheet={{
+                      textVariant: theme.typography.variants.body1,
+                      color: theme.colors.neutral["500"],
+                      marginTop: theme.space.x6,
                     }}
                   >
-                    Alura Cases
+                    Im a front-end developer who is passionate about technology and music producer
                   </Text>
                   <Text
                     as="p"
@@ -238,17 +304,7 @@ export default function HomeScreen() {
                       marginTop: theme.space.x6,
                     }}
                   >
-                    Aqui você vai ter acesso a discussões avançadas: as principais decisões sobre arquitetura e design de sistemas. Aprenda através das descobertas que as principais empresas de tecnologia enfrentam!
-                  </Text>
-                  <Text
-                    as="p"
-                    styleSheet={{
-                      textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
-                      marginTop: theme.space.x6,
-                    }}
-                  >
-                    Quer testar antes de todo mundo?
+                   Get to know me and ask me out for a coffee!
                   </Text>
                 </Box>
                 <Box
@@ -269,41 +325,17 @@ export default function HomeScreen() {
                 >
                   <Box
                     styleSheet={{
-                      minWidth: 0,
-                      flex: 1,
-                    }}
-                  >
-                    <Text
-                      as="label"
-                      htmlFor="email"
-                      styleSheet={{
-                        srOnly: true,
-                      }}
-                    >
-                      Email address
-                    </Text>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Coloque seu email aqui"
-                    />
-                  </Box>
-                  <Box
-                    styleSheet={{
                       marginTop: {
                         xs: theme.space.x4,
                         sm: theme.space.x0,
-                      },
-                      marginLeft: {
-                        sm: theme.space.x3,
                       },
                     }}
                   >
                     <Button
                       type="submit"
-                      // button variant
+                      button variant
                     >
-                      Cadastrar
+                      Hire Me
                     </Button>
                   </Box>
                 </Box>
@@ -311,7 +343,7 @@ export default function HomeScreen() {
             </Box>
           </Box>
 
-          <SideImage />
+          {/* <SideImage /> */}
         </Box>
       </Box>
       <Footer />
