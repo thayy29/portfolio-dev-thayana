@@ -1,5 +1,7 @@
 import GlobalStyle from "../src/theme/GlobalStyle";
 import Head from 'next/head'
+import '../src/styles/global.css'
+
 
 
 export default function MyApp({ Component, pageProps }) {
