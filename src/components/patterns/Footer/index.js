@@ -37,5 +37,6 @@ export default function Footer() {
         </Text>
       </Box>
     </Box>
+    // <div class="footer relative top-56">{new Date().getFullYear()} Thayana Classo Soares. Todos os direitos reservados.</div>
   )
 }
