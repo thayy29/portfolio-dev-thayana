@@ -7,11 +7,17 @@ module.exports = {
     fontFamily: {
       'body': ['"Poppins"'],
     },
-    extend: {
-      content: {
-        'link': 'url("/src/svg/house.svg")',
-      }
+    screens: {
+      'lg': { 'max': '1199px'},
+      // => @media (max-width: 1280px) { ... }
+
+      'md': {'max': '940px'},
+      // => @media (min-width: 640px) { ... }
+
+      'sm': {'max': '576px'}
+
     },
+
   },
   plugins: [],
 }
