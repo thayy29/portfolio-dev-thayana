@@ -1,42 +1,16 @@
-import { Box, Text } from '../../../theme/components';
-import { theme } from "../../../theme/theme"
+import { Box, Text } from "../../../theme/components";
+import { theme } from "../../../theme/theme";
 
 export default function Footer() {
   return (
-    <Box
-      as="footer"
-      styleSheet={{
-        backgroundColor: theme.colors.neutral[900]
-      }}
-    >
-      <Box
-        styleSheet={{
-          overflow:"hidden",
-          maxWidth: theme.space.xcontainer_xl,
-          marginLeft: "auto",
-          marginRight:"auto",
-          paddingVertical:{
-            xs: theme.space.x12,
-          },
-          paddingHorizontal:{
-            xs: theme.space.x4,
-            sm: theme.space.x6,
-            lg: theme.space.x8,
-          },
-        }}
-      >
-        <Text
-          as="p"
-          styleSheet={{
-            textVariant: theme.typography.variants.body3,
-            textAlign: "center",
-            color: theme.colors.neutral[400],
-          }}
-        >
-          © {new Date().getFullYear()} Thayana Classo Soares. Todos os direitos reservados.
-        </Text>
-      </Box>
-    </Box>
-    // <div class="footer relative top-56">{new Date().getFullYear()} Thayana Classo Soares. Todos os direitos reservados.</div>
-  )
+    <div className="footer relative top-56">
+      <div className="structure h-auto w-full fixed bottom-0 z-50">
+        <div className="text-content bg-slate-400 text-zinc-50 p-8 flex justify-center items-center">
+          {" "}
+          {new Date().getFullYear()} Thayana Classo Soares. Todos os direitos
+          reservados.
+        </div>
+      </div>
+    </div>
+  );
 }
