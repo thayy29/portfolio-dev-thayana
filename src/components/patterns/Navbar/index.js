@@ -60,7 +60,7 @@ export default function Navbar() {
             >
               {" "}
               <img
-                className="rounded-full max-h-20 lg:max-h-28 lg:border-2 lg:border-slate-800 max-w-xs"
+                className="rounded-full border-2 border-slate-300 max-h-20 lg:max-h-20 lg:border-2 lg:border-slate-300 max-w-xs"
                 src="https://avatars.githubusercontent.com/u/31221444?v=4"
               ></img>
             </a>
@@ -85,82 +85,79 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          className="sidebar h-auto flex justify-end w-full static bg-transparent
-          lg:w-80 lg:fixed lg:top-0 lg:left-0 lg:bg-slate-600 lg:z-100 lg:transition-all
-          lg:duration-3000 lg:ease-in-out lg:h-screen"
+          className="sidebar h-auto flex justify-end w-full static py-6 bg-transparent
+          lg:w-80 lg:fixed lg:h-screen lg:bg-slate-300 lg:justify-start lg:z-40 lg:opacity-80 lg:shadow-xl"
         >
           <div
-            class="sidebar-inner h-20 flex items-center justify-between py-0 lg:flex-col
-          "
+            className="menu z-50 flex justify-end h-auto p-0
+           lg:items-start lg:w-full lg:py-9 lg:px-5 lg:justify-start lg:mt-20"
           >
-            <div className="menu z-50 h-auto p-0 w-full">
-              <div
-                className="list text-slate-600 h-auto font-medium font-sans"
-                data-nav="list"
-              >
-                <ul className="anchor-nav flex items-center justify-center m-0">
-                  <li className="w-auto float-none ml-1">
-                    <div className="list-inner">
-                      <a
-                        className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
+            <div
+              className="list text-slate-950 h-auto font-medium font-sans"
+              data-nav="list"
+            >
+              <ul className="anchor-nav flex items-center justify-center lg:z-100 m-0 lg:flex-col lg:items-start">
+                <li className="w-auto float-none ml-1 lg:mb-6">
+                  <div className="list-inner">
+                    <a
+                      className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
                        rounded-md relative transition-all duration-3000 ease-in-out lg:py-1 lg:px-3 lg:text-sm"
-                        href="/"
-                      >
-                        <Avatar />
-                        Avatar
-                      </a>
-                    </div>
-                  </li>
-                  <li className="w-auto float-none ml-1">
-                    <div className="list-inner">
-                      <a
-                        className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
+                      href="/"
+                    >
+                      <Avatar />
+                      Avatar
+                    </a>
+                  </div>
+                </li>
+                <li className="w-auto float-none ml-1 lg:mb-6">
+                  <div className="list-inner">
+                    <a
+                      className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
                        rounded-md relative transition-all duration-3000 ease-in-out lg:py-1 lg:px-3 lg:text-sm"
-                        href="/"
-                      >
-                        <House />
-                        Home
-                      </a>
-                    </div>
-                  </li>
-                  <li className="w-auto float-none ml-1">
-                    <div className="list-inner">
-                      <a
-                        className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
+                      href="/"
+                    >
+                      <House />
+                      Home
+                    </a>
+                  </div>
+                </li>
+                <li className="w-auto float-none ml-1 lg:mb-6">
+                  <div className="list-inner">
+                    <a
+                      className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
                        rounded-md relative transition-all duration-3000 ease-in-out lg:py-1 lg:px-3 lg:text-sm"
-                        href="/"
-                      >
-                        <Portfolio />
-                        Portfolio
-                      </a>
-                    </div>
-                  </li>
-                  <li className="w-auto float-none ml-1">
-                    <div className="list-inner">
-                      <a
-                        className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
+                      href="/"
+                    >
+                      <Portfolio />
+                      Portfolio
+                    </a>
+                  </div>
+                </li>
+                <li className="w-auto float-none ml-1 lg:mb-6">
+                  <div className="list-inner">
+                    <a
+                      className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
                        rounded-md relative transition-all duration-3000 ease-in-out lg:py-1 lg:px-3 lg:text-sm"
-                        href="/"
-                      >
-                        <Music />
-                        Music
-                      </a>
-                    </div>
-                  </li>
-                  <li className="w-auto float-none ml-1">
-                    <div className="list-inner">
-                      <a
-                        className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
+                      href="/"
+                    >
+                      <Music />
+                      Music
+                    </a>
+                  </div>
+                </li>
+                <li className="w-auto float-none ml-1 lg:mb-6">
+                  <div className="list-inner">
+                    <a
+                      className="text-sm font-semibold justify-center py-1 px-5 flex items-end text-zinc-900
                        rounded-md relative transition-all duration-3000 ease-in-out lg:py-1 lg:px-3 lg:text-sm"
-                        href="/"
-                      >
-                        <Contact />
-                        Contact
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                      href="/"
+                    >
+                      <Contact />
+                      Contact
+                    </a>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

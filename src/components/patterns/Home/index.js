@@ -6,7 +6,7 @@ export default function Home() {
       id="home"
     >
       <div className="content py-24 px-5 flex flex-col w-2/4">
-        <div class="img-home m-auto">
+        <div class="img-home flex justify-center items-center">
           <img
             src="https://avatars.githubusercontent.com/u/31221444?v=4"
             className="rounded-full h-72 w-72 max-w-full border-2 border-slate-400"
