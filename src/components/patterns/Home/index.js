@@ -1,5 +1,4 @@
 import Typical from "react-typical";
-import About from "../About";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
             className="rounded-full h-72 w-72 max-w-full shadow-lg"
           ></img>
         </div>
-        <div className="info-content flex flex-col mt-4 shadow-sm">
+        <div className="info-content flex flex-col mt-4">
           <h5 className="text-zinc-400 text-oxford-blue/90 font-bold text-2xl tracking-wider mt-4">
             Hi, Im Thayana Classo
           </h5>
@@ -30,6 +29,11 @@ export default function Home() {
             I'm a Front-end React Developer based In Brazil, over 3 years of
             professional experience.
           </p>
+        </div>
+        <div className="box-social-media mt-8">
+          <button className="btn-download  text-fern-green tracking-wid hover:bg-tea-creme font-bold p-3 px-6 border-2 border-fern-green/50 bg-fern-green/20 shadow-md rounded-full">
+            Download CV
+          </button>
         </div>
       </div>
     </div>
