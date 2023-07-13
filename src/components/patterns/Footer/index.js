@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="footer relative top-56">
       <div className="structure h-auto w-full fixed bottom-0 z-50">
-        <div className="text-content bg-slate-400 text-zinc-50 p-8 flex justify-center items-center">
+        <div className="shadow-xl text-content tracking-wider bg-fern-green/70 text-tea-creme p-8 flex justify-center items-center text-sm">
           {" "}
           {new Date().getFullYear()} Thayana Classo Soares. Todos os direitos
           reservados.
