@@ -1,6 +1,9 @@
+import { useState } from "react";
+import Modal from "../../Modal";
 import ProgressBar from "./ProgressBar";
 
 export default function About() {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="box w-full h-screen">
       <div className="inner bg-slate-100 px-14 py-14">
@@ -27,8 +30,24 @@ export default function About() {
               </p>
 
               {/* Progress bar */}
-              <div className="mt-10 bg-fern-green/20 shadow-md p-10 rounded-md flex-col">
+              <div className="mt-10 bg-fern-green/10 shadow-md p-10 rounded-md flex-col">
                 <ProgressBar />
+
+                <div className="btn-see-more cursor-pointer">
+                  <button
+                    onClick={() => setOpenModal(true)}
+                    className="btn-download  text-fern-green tracking-wid hover:bg-tea-creme font-bold p-3 px-6 border-2 border-fern-green/50 bg-fern-green/20 shadow-md rounded-full
+                  "
+                  >
+                    See More
+                  </button>
+
+                  {openModal && (
+                    <div className="modal-see-more">
+                      <Modal onClose={() => setOpenModal(false)} />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
