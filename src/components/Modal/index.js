@@ -1,6 +1,6 @@
 export default function Modal({ onClose }) {
   return (
-    <div className="modal bg-tea-creme/90 relative -top-96 left-1/2 bottom-1/2 border-2 rounded-md p-6 border-fern-green">
+    <div className="modal bg-tea-creme absolute">
       <div className="content-modal">
         <div className="wrapper-modal flex align-middle justify-between">
           <div className="left-box-modal">
@@ -19,12 +19,20 @@ export default function Modal({ onClose }) {
           </div>
         </div>
 
-        <button
-          className="btn-close font-bold bottom-0 absolute right-1/2 p-1 rounded-full border-fern-green"
-          onClick={onClose}
-        >
-          Close
-        </button>
+        <div class="close-container">
+          {/* <div class="leftright"></div>
+          <div class="rightleft"></div> */}
+          <button
+            class="close leftright"
+            onClick={onClose}
+            onFocus={onClose}
+          ></button>
+          <button
+            class="close rightleft"
+            onClick={onClose}
+            onFocus={onClose}
+          ></button>
+        </div>
       </div>
     </div>
   );

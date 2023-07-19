@@ -1,9 +1,34 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Modal from "../../Modal";
 import ProgressBar from "./ProgressBar";
 
 export default function About() {
   const [openModal, setOpenModal] = useState(false);
+  const modalRef = useRef();
+
+  // Detectar o click
+  useEffect(() => {
+    function handler(event) {
+      console.log(event, "clicked somewhere");
+    }
+    window.addEventListener("click", handler);
+    return () => window.removeEventListener("click", handler);
+  });
+
+  // Detectar se o click foi fora da janela
+  useEffect(() => {
+    function handler(event) {
+      if (!modalRef.current?.contains(event.target)) {
+        console.log("clicked outside of modal");
+      }
+      // setOpenModal(false);
+    }
+
+    window.addEventListener("click", handler);
+
+    return () => window.removeEventListener("click", handler);
+  }, []);
+
   return (
     <div className="box w-full h-screen">
       <div className="inner bg-slate-100 px-14 py-14">
@@ -43,7 +68,11 @@ export default function About() {
                   </button>
 
                   {openModal && (
-                    <div className="modal-see-more">
+                    <div
+                      className="modal-see-more overlay"
+                      id="modal"
+                      ref={modalRef}
+                    >
                       <Modal onClose={() => setOpenModal(false)} />
                     </div>
                   )}

@@ -8,3 +8,82 @@
 ::after {
   box-sizing: border-box; /* 1 */
 }
+
+@layer components {
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.85);
+    z-index: 99;
+    height: 100%;
+  }
+
+  .modal {
+    width: 50%;
+    background-color: theme(colors.tea-creme);
+    border: 2px solid theme(colors.fern-green);
+    color: theme(colors.oxford-blue);
+    padding: 2.5rem;
+    border-radius: 30px;
+  }
+  .close-container{
+    position: relative;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+
+  .leftright{
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: theme(colors.fern-green);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+  }
+
+  .rightleft{
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: theme(colors.fern-green);
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+  }
+
+  label{
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: .6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .3s ease-in;
+    opacity: 0;
+  }
+  .close{
+    margin: 60px 0 0 5px;
+    position: absolute;
+  }
+
+  .close-container:hover .leftright{
+    transform: rotate(-45deg);
+    background-color: theme(colors.jet);
+  }
+
+  .close-container:hover .rightleft{
+    transform: rotate(45deg);
+    background-color: theme(colors.jet)
+  }
+  .close-container:hover label{
+    opacity: 1;
+  }
+
+}
