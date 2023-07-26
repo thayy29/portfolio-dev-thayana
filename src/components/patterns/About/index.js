@@ -3,32 +3,17 @@ import Modal from "../../Modal";
 import ProgressBar from "./ProgressBar";
 
 export default function About() {
-  const [openModal, setOpenModal] = useState(false);
-  const modalRef = useRef();
+  const [visible, setVisible] = useState(false);
 
-  // Detectar o click
-  useEffect(() => {
-    function handler(event) {
-      console.log(event, "clicked somewhere");
-    }
-    window.addEventListener("click", handler);
-    return () => window.removeEventListener("click", handler);
-  });
+  const handler = () => {
+    setVisible(true);
+    console.log("abriu");
+  };
 
-  // Detectar se o click foi fora da janela
-  useEffect(() => {
-    function handler(event) {
-      if (!modalRef.current?.contains(event.target)) {
-        console.log("clicked outside of modal");
-      }
-      // setOpenModal(false);
-    }
-
-    window.addEventListener("click", handler);
-
-    return () => window.removeEventListener("click", handler);
-  }, []);
-
+  const closeHandler = () => {
+    setVisible(false);
+    console.log("fechou");
+  };
   return (
     <div className="box w-full h-screen">
       <div className="inner bg-slate-100 px-14 py-14">
@@ -60,20 +45,16 @@ export default function About() {
 
                 <div className="btn-see-more cursor-pointer">
                   <button
-                    onClick={() => setOpenModal(true)}
+                    onClick={handler}
                     className="btn-download  text-fern-green tracking-wid hover:bg-tea-creme font-bold p-3 px-6 border-2 border-fern-green/50 bg-fern-green/20 shadow-md rounded-full
                   "
                   >
                     See More
                   </button>
 
-                  {openModal && (
-                    <div
-                      className="modal-see-more overlay"
-                      id="modal"
-                      ref={modalRef}
-                    >
-                      <Modal onClose={() => setOpenModal(false)} />
+                  {visible && (
+                    <div className="modal-see-more" id="modal">
+                      <Modal onClose={closeHandler} />
                     </div>
                   )}
                 </div>
