@@ -1,4 +1,5 @@
 import Typical from "react-typical";
+import { Counter } from "../../../features/counter/Counter";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <Counter />
     </div>
   );
 }
